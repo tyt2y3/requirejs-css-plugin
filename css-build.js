@@ -58,7 +58,7 @@ define(function() {
 			write(
 				"define('"+pluginName+'!'+moduleName+"', ['"+pluginName+"-embed'], \n"+
 				"function(embed)\n{\n"+
-					"\tembed(\n\t'"+buildMap[moduleName]+"'\n\t);\n"+
+					"\tembed(\n\t'"+buildMap[moduleName].replace(/'/g, "\\'")+"'\n\t);\n"+
 					"\treturn true;\n"+
 				"});\n"
 			);
