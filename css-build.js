@@ -58,7 +58,8 @@ define(function() {
 			write(
 				"define('"+pluginName+'!'+moduleName+"', ['"+pluginName+"-embed'], \n"+
 				"function(embed)\n{\n"+
-					"\tembed(\n\t'"+buildMap[moduleName].replace(/'/g, "\\'")+"'\n\t);\n"+
+					"\tembed(\n\t'"+buildMap[moduleName].replace(/'/g, "\\'")+.
+						replace(/\\([0-9a-fA-F]{4})/g, "\\\\$1")+"'\n\t);\n"+
 					"\treturn true;\n"+
 				"});\n"
 			);
