@@ -27,7 +27,7 @@ define(function() {
 		load: function (name, require, load, config) {
 			//console.log('css-build: load: '+name);
 			load(true);
-			loadfile(config.baseUrl+name,function(F){
+			loadfile(require.toUrl(name),function(F){
 				buildMap[name]=strip(F);
 			});
 		},
